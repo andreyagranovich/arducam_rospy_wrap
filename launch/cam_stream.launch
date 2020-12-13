@@ -1,0 +1,14 @@
+<launch>
+	
+	<!-- Command Line Arguments -->
+	<arg name="exposure" default="660" />
+	<arg name="cam_gain" default="1" />
+	<arg name="fps" default="30" />
+	<!-- Make arguments available to parameter server -->
+	
+<node pkg="arducam_stream" name="stream" type="stream.py" output="screen">
+	<param name="exposure" type="int" value="$(arg exposure)" />
+	<param name="cam_gain" type="int" value="$(arg cam_gain)" />
+	<param name="fps" type="int" value="$(arg fps)" />
+</node>
+</launch>
